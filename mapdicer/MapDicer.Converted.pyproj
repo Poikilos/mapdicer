@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{DC1FBDD5-F431-4041-AD81-27DCF659D5A7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MapDicer</RootNamespace>
+    <AssemblyName>MapDicer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <MainFile>Program.py</MainFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>True</Prefer32Bit>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IronPython">
+      <HintPath>$(PythonBinPath)\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ByteMap.py" />
+    <Compile Include="IrrCompat\IrrcompatTypes.py" />
+    <Compile Include="MainForm.Designer.py">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.py" />
+    <Compile Include="MapDicerTypes.py" />
+    <Compile Include="MapViewer.py" />
+    <Compile Include="Models\Layer.py" />
+    <Compile Include="Models\Lod.py" />
+    <Compile Include="Models\Mapblock.py" />
+    <Compile Include="Models\MapDicerContext.py" />
+    <Compile Include="Models\Region.py" />
+    <Compile Include="Models\SettingModel.py" />
+    <Compile Include="Models\SQLiteConfiguration.py" />
+    <Compile Include="Models\Terrain.py" />
+    <Compile Include="MtCompat\ContentFeatures.py" />
+    <Compile Include="MtCompat\Database.py" />
+    <Compile Include="MtCompat\MapNode.py" />
+    <Compile Include="MtCompat\NodeDef.py" />
+    <Compile Include="Program.py" />
+    <Compile Include="Properties\AssemblyInfo.SharpDevelop.py" />
+    <Compile Include="SettingController.py" />
+    <Compile Include="TerrainButton.py" />
+    <Compile Include="ViewsWinForms\EditorSettingsWindow.Designer.py">
+      <DependentUpon>EditorSettingsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewsWinForms\EditorSettingsWindow.py" />
+    <Compile Include="ViewsWinForms\LodWindow.Designer.py">
+      <DependentUpon>LodWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewsWinForms\LodWindow.py" />
+    <Compile Include="ViewsWinForms\MapblockWindow.Designer.py">
+      <DependentUpon>MapblockWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewsWinForms\MapblockWindow.py" />
+    <Compile Include="ViewsWinForms\NewTerrainWindow.Designer.py">
+      <DependentUpon>NewTerrainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewsWinForms\NewTerrainWindow.py" />
+    <Compile Include="ViewsWinForms\RegionWindow.Designer.py">
+      <DependentUpon>RegionWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewsWinForms\RegionWindow.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.SharpDevelop.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IrrCompat" />
+    <Folder Include="Models" />
+    <Folder Include="MtCompat" />
+    <Folder Include="ViewsWinForms" />
+  </ItemGroup>
+  <Import Project="$(PythonBinPath)\SharpDevelop.Build.Python.targets" />
+</Project>
